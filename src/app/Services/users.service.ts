@@ -10,18 +10,18 @@ export class UsersService {
   userList: Users[] = []
   constructor(private http: HttpClient) { }
 
-
+  //method to get the users and put them on the array to be passed to the users component
   getUsers(): Users[] {
     this.http.get(this.url + 'users.json').subscribe((users) => {
-      // console.log(users);
       for (const key in users) {
-        this.userList.push(users[key])
+        let user: Users = new Users(key, users[key].name, users[key].email)
+        this.userList.push(user)
       }
-      // console.log(this.userList);
     })
     return this.userList
   }
-  adduser(user: Users) {
+  // method for adding users
+  adduser(user: Users): void {
     this.http.post(this.url + 'users.json', user).subscribe((params) => {
       for (const key in params) {
         user.id = params[key];
@@ -29,4 +29,13 @@ export class UsersService {
       this.userList.push(user)
     })
   }
+
+  //method for editing users
+
+  //method for deleting users
+
+
+
+
+
 }
