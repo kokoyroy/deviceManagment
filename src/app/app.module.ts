@@ -13,6 +13,8 @@ import { DevicesComponent } from './dashboard/mainview/devices/devices.component
 import { DeviceComponent } from './dashboard/mainview/devices/device/device.component';
 import { MainviewRoutingModule } from './dashboard/mainview/mainview-routing.module';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     BrowserModule,
-    MainviewRoutingModule,FormsModule
+    MainviewRoutingModule,
+    FormsModule,
+    HttpClientModule
   ],
-  providers: [UsersService,DevicesService],
+  providers: [UsersService, DevicesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

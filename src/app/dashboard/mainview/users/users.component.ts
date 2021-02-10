@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
 
   name: string;
   email: string;
-  id: number = 1
+  id: string ;
 
   ngOnInit(): void {
     this.usersList = this.usersService.getUsers();
@@ -21,7 +21,6 @@ export class UsersComponent implements OnInit {
   addUser() {
     const user = new Users(this.id, this.name, this.email)
     this.usersService.adduser(user)
-    this.id += 1
     this.name = ''
     this.email = ''
   }

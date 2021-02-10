@@ -2,7 +2,7 @@ import { Devices } from "./devices";
 
 export class Users {
     private devices: Devices[] = []
-    constructor(public id: number, public name: string, public email: string) {
+    constructor(public id: string, public name: string, public email: string) {
 
     }
     getDevices(): Devices[] {
