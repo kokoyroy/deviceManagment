@@ -1,0 +1,26 @@
+.container{
+    background-color: aqua;
+    height: 100%;
+}
+.logo{
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.list{
+    list-style: none;
+    padding: 0;
+}
+.list li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 70px;
+    border: 1px olive solid;
+    cursor: pointer;
+}
+.active{
+    background-color: green;
+}

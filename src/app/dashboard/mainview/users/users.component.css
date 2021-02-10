@@ -1,0 +1,25 @@
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.users-list {
+    flex-grow: 0.5;
+    background-color: hotpink;
+    height: 100%;
+    
+}
+.users-list ul{
+    list-style: none;
+    padding:0 ;
+}
+.add-user {
+    background-color: grey;
+    flex-grow: 0.5;
+    height: 100%;
+}
+.add-user label{
+    /* padding: 5px 20px; */
+}

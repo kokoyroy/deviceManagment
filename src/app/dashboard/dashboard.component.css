@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+.sidebar{
+    flex-grow: .1;
+    height: 100%;
+    border-right: 1px solid chocolate;
+    max-width: 150px;
+}
+.mainview{
+    height: 100%;
+    flex-grow: .9;
+}

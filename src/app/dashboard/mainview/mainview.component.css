@@ -1,0 +1,12 @@
+.container{
+    background-color: cadetblue;
+    height: 100%;
+}
+.header{
+    height: 70px;
+    border: 1px red solid;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    font-size: larger;
+}

@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="users-list">
+        <ul *ngFor='let user of usersList'>
+            <li><strong>Id:</strong>{{user.id}} <strong>username:</strong>{{user.name}},
+                <strong>email:</strong>{{user.email}}
+            </li>
+        </ul>
+    </div>
+    <div class="add-user">
+       
+        <label for="name">name</label>
+        <input type="text" [(ngModel)]='name' placeholder="enter name">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]='email' placeholder="enter email">
+        <br>
+        <button class="btn btn-primary" (click)='addUser()'>add</button>
+    </div>
+</div>
