@@ -18,6 +18,8 @@ export class UsersService {
         this.userList.push(user)
       }
     })
+    console.log(this.userList);
+    
     return this.userList
   }
   // method for adding users

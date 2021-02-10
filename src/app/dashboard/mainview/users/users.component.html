@@ -1,13 +1,22 @@
 <div class="container">
     <div class="users-list">
         <ul *ngFor='let user of usersList'>
-            <li><strong>Id:</strong>{{user.id}} <strong>username:</strong>{{user.name}},
-                <strong>email:</strong>{{user.email}}
+            <li>
+                <div><strong>Id:</strong>{{user.id}}</div>
+                <div> <strong>username:</strong>{{user.name}}</div>
+                <div><strong>email:</strong>{{user.email}}</div>
+                <p *ngIf='!user.getDevices().length'>this user got no devices!</p>
+                <div *ngIf='user.getDevices().length'>
+                    <ul *ngFor='let dev of user.getDevices()'>
+                        <li>{{dev}}</li>
+                    </ul>
+                </div>
             </li>
+            <br>
         </ul>
     </div>
     <div class="add-user">
-       
+
         <label for="name">name</label>
         <input type="text" [(ngModel)]='name' placeholder="enter name">
         <br>
