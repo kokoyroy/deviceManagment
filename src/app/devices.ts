@@ -1,5 +1,6 @@
 export class Devices {
-    constructor(private serial: string, private description: string, private type: number) { }
+     id:string=''
+    constructor( private serial: string, private description: string, private type: number) { }
 
     getDeviceSerial(): string {
         return this.serial

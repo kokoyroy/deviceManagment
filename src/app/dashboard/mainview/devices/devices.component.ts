@@ -20,7 +20,15 @@ export class DevicesComponent implements OnInit {
   }
   addDevice() {
     this.deviceService.addToDeviceList(new Devices(this.serial, this.description, this.type))
+    this.serial = ''
+    this.description = ''
+    this.type = null;
 
+  }
+  deleteDevice(id:string){
+    console.log(id);
+    
+    this.deviceService.deleteDevice(id)
   }
 
 }

@@ -4,7 +4,9 @@
         <ul *ngFor='let dev of devices'>
             <li><em>Serial</em>: <span> {{dev.getDeviceSerial()}}</span> </li>
             <li><em>description</em>: <span>{{dev.getDeviceDescription()}}</span></li>
-            <li><em>type:</em>   <span>{{dev.getDeviceType()}}</span> </li>
+            <li><em>type:</em> <span>{{dev.getDeviceType()}}</span> </li>
+            <button >edit</button>
+            <button (click)='deleteDevice(dev.id)'>delete</button>
         </ul>
     </div>
     <div class="device-add">
