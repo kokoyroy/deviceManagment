@@ -12,6 +12,7 @@ export class UsersService {
 
   //method to get the users and put them on the array to be passed to the users component
   getUsers(): Users[] {
+    this.userList=[];
     this.http.get(this.url + 'users.json').subscribe((users) => {
       for (const key in users) {
         let user: Users = new Users(key, users[key].name, users[key].email)

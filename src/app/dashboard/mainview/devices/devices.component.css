@@ -23,3 +23,11 @@
     height: 100%;
     flex-grow: 0.5;
 }
+.header{
+    height: 70px;
+    border: 1px red solid;
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    font-size: larger;
+}

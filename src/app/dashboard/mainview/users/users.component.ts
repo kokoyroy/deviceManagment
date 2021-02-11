@@ -13,7 +13,7 @@ export class UsersComponent implements OnInit {
 
   name: string;
   email: string;
-  id: string ;
+  id: string;
 
   ngOnInit(): void {
     this.usersList = this.usersService.getUsers();

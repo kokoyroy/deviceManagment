@@ -14,6 +14,8 @@ import { DeviceComponent } from './dashboard/mainview/devices/device/device.comp
 import { MainviewRoutingModule } from './dashboard/mainview/mainview-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { UsersHeaderComponent } from './dashboard/mainview/header/users-header/users-header.component';
+import { DevicesHeaderComponent } from './dashboard/mainview/header/devices-header/devices-header.component';
 
 
 @NgModule({
@@ -25,11 +27,15 @@ import { HttpClientModule } from '@angular/common/http';
     UsersComponent,
     UserComponent,
     DevicesComponent,
-    DeviceComponent
+    DeviceComponent,
+
+    UsersHeaderComponent,
+    DevicesHeaderComponent
   ],
   imports: [
     BrowserModule,
     MainviewRoutingModule,
+
     FormsModule,
     HttpClientModule
   ],
