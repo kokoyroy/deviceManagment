@@ -1,1 +1,12 @@
-<p>device works!</p>
+<app-devices-header [serial]='device.getDeviceSerial()' [description]="device.getDeviceDescription()" class="header"></app-devices-header>
+<div *ngIf='device'>Device Serial :  {{device.getDeviceSerial()}}</div>
+<div *ngIf='device'>Device description :  {{device.getDeviceDescription()}}</div>
+<div *ngIf='device'>Device Type :  {{device.getDeviceType()}}</div>
+
+
+<p>Edit</p>
+<input type="text" placeholder="serial" [(ngModel)]='serial'><br>
+<input type="text" placeholder="description" [(ngModel)]='description'><br>
+<input type="number" placeholder="type" [(ngModel)]='type'><br>
+<button (click)='editDevice(device.id)'>Edit</button>
+<button (click)='cancel()'>cancel</button>

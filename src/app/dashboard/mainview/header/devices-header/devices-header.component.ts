@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-devices-header',
@@ -6,6 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./devices-header.component.css']
 })
 export class DevicesHeaderComponent implements OnInit {
+  @Input() description: string
+  @Input() serial: string
+
+
 
   constructor() { }
 
