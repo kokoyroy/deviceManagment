@@ -16,6 +16,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersHeaderComponent } from './dashboard/mainview/header/users-header/users-header.component';
 import { DevicesHeaderComponent } from './dashboard/mainview/header/devices-header/devices-header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { DevicesHeaderComponent } from './dashboard/mainview/header/devices-head
     MainviewRoutingModule,
 
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   providers: [UsersService, DevicesService],
   bootstrap: [AppComponent]

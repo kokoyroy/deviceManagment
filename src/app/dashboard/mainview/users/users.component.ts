@@ -24,4 +24,7 @@ export class UsersComponent implements OnInit {
     this.name = ''
     this.email = ''
   }
+  deleteUser(id:string){
+    this.usersService.deleteUser(id)
+  }
 }

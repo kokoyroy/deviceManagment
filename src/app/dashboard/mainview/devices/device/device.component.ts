@@ -20,6 +20,9 @@ export class DeviceComponent implements OnInit {
     this.activeRouter.paramMap.subscribe((param) => {
       this.id = param.get('id')
       this.device = this.deviceService.getDevice(this.id)
+      this.serial = this.device.getDeviceSerial()
+      this.description = this.device.getDeviceDescription()
+      this.type = this.device.getDeviceType()
     })
   }
   editDevice(id: string) {

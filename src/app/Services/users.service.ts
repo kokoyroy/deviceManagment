@@ -12,7 +12,7 @@ export class UsersService {
 
   //method to get the users and put them on the array to be passed to the users component
   getUsers(): Users[] {
-    this.userList=[];
+    this.userList = [];
     this.http.get(this.url + 'users.json').subscribe((users) => {
       for (const key in users) {
         let user: Users = new Users(key, users[key].name, users[key].email)
@@ -20,7 +20,7 @@ export class UsersService {
       }
     })
     console.log(this.userList);
-    
+
     return this.userList
   }
   // method for adding users
@@ -32,10 +32,25 @@ export class UsersService {
       this.userList.push(user)
     })
   }
+  getUser(id: string): Users {
+    const index = this.userList.findIndex(el => el.id === id)
+    return this.userList[index]
+  }
 
   //method for editing users
 
   //method for deleting users
+  deleteUser(id: string) {
+    this.http.delete(this.url + 'users/' + id + '.json').subscribe((params) => {
+      if (!params) {
+        let index = this.userList.findIndex(el => el.id === id);
+        this.userList.splice(index, 1);
+      } else {
+        console.log('user did not deteled succesfully... something went wrong');
+
+      }
+    })
+  }
 
 
 

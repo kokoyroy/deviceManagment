@@ -1,1 +1,5 @@
-<p>user works!</p>
+<app-users-header [email]='user.email' [name]='user.name'></app-users-header>
+
+<div *ngIf='user'>User name  :  {{user.name}}</div>
+<div *ngIf='user'>User Email :  {{user.email}}</div>
+<!-- <div *ngIf='user'>Device Type :  {{}}</div> -->
