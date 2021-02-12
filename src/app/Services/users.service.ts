@@ -38,6 +38,12 @@ export class UsersService {
   }
 
   //method for editing users
+  editUser(id: string, user: Users) {
+    this.http.put(this.url + 'users/' + id + '.json', user).subscribe((params) => {
+      const index = this.userList.findIndex(el => el.id === id)
+      this.userList[index] = user
+    })
+  }
 
   //method for deleting users
   deleteUser(id: string) {

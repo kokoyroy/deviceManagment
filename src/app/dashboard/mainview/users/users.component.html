@@ -7,7 +7,7 @@
                 <div><strong>Id:</strong>{{user.id}}</div>
                 <div> <strong>username:</strong>{{user.name}}</div>
                 <div><strong>email:</strong>{{user.email}}</div>
-                <button disabled routerLink='/users/{{user.id}}'>Edit</button>
+                <button  routerLink='/users/{{user.id}}'>Edit</button>
                 <button (click)='deleteUser(user.id)'>Delete</button>
                 <p *ngIf='!user.getDevices().length'>this user got no devices!</p>
                 <div *ngIf='user.getDevices().length'>

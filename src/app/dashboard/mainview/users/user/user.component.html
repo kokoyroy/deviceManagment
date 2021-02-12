@@ -2,4 +2,11 @@
 
 <div *ngIf='user'>User name  :  {{user.name}}</div>
 <div *ngIf='user'>User Email :  {{user.email}}</div>
-<!-- <div *ngIf='user'>Device Type :  {{}}</div> -->
+<div *ngIf='user'>User ID :  {{user.id}}</div>
+
+
+<p>Edit</p>
+<input  type="text" placeholder="name" [(ngModel)]='name'><br>
+<input  type="text" placeholder="email" [(ngModel)]='email'><br>
+<button (click)='edituser(user.id)'>Edit</button>
+<button (click)='cancel()'>cancel</button>
