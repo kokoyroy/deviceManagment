@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class DevicesHeaderComponent implements OnInit {
   @Input() description: string
   @Input() serial: string
+  @Input() add: boolean
 
 
 

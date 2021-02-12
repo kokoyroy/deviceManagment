@@ -1,0 +1,21 @@
+.users-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: 0 auto;
+
+}
+.users-header button{
+    display: block;
+    padding: 5px 30px;
+}
+.add{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    width: 90%;
+}
+.add button{
+    display: block;
+}

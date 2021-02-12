@@ -7,7 +7,7 @@
                 <div><strong>Id:</strong>{{user.id}}</div>
                 <div> <strong>username:</strong>{{user.name}}</div>
                 <div><strong>email:</strong>{{user.email}}</div>
-                <button  routerLink='/users/{{user.id}}'>Edit</button>
+                <button  routerLink='/users/{{user.id}}'>View/Edit</button>
                 <button (click)='deleteUser(user.id)'>Delete</button>
                 <p *ngIf='!user.getDevices().length'>this user got no devices!</p>
                 <div *ngIf='user.getDevices().length'>
@@ -19,14 +19,5 @@
             <br>
         </ul>
     </div>
-    <div class="add-user">
-
-        <label for="name">name</label>
-        <input type="text" [(ngModel)]='name' placeholder="enter name">
-        <br>
-        <label for="email">Email</label>
-        <input type="email" [(ngModel)]='email' placeholder="enter email">
-        <br>
-        <button class="btn btn-primary" (click)='addUser()'>add</button>
-    </div>
+   
 </div>

@@ -1,1 +1,6 @@
-<p>User {{name}} emal{{email}}</p>
+<p *ngIf='name'>User {{name}} emal{{email}}</p>
+<div *ngIf='!name&&!add' class="users-header">
+    <h3>Users</h3>
+    <button routerLink='/users/add'>Add</button>
+</div>
+<div *ngIf='add' class="add"><button routerLink='/users'>Back</button></div>

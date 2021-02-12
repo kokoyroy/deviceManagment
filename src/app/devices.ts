@@ -1,6 +1,7 @@
 export class Devices {
-     id:string=''
-    constructor( private serial: string, private description: string, private type: number) { }
+    assigned: boolean = false;
+    id: string = ''
+    constructor(private serial: string, private description: string, private type: number) { }
 
     getDeviceSerial(): string {
         return this.serial

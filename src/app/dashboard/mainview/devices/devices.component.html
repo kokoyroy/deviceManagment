@@ -5,21 +5,9 @@
             <li><em>Serial</em>: <span> {{dev.getDeviceSerial()}}</span> </li>
             <li><em>description</em>: <span>{{dev.getDeviceDescription()}}</span></li>
             <li><em>type:</em> <span>{{dev.getDeviceType()}}</span> </li>
-            <button routerLink='/devices/{{dev.id}}'>edit</button>
+            <button routerLink='/devices/{{dev.id}}'>View/Edit</button>
             <button (click)='deleteDevice(dev.id)'>delete</button>
         </ul>
     </div>
-    <div class="device-add">
-        <label for="name">serial</label>
-        <input type="text" maxlength="255" [(ngModel)]='serial' placeholder="enter serial">
-        <br>
-        <label for="email">description</label>
-        <input type="text" maxlength="255" [(ngModel)]='description' placeholder="enter descripton">
-        <br>
-        <label for="email">type</label>
-        <input type="number" [(ngModel)]='type' placeholder="enter type">
-        <br>
-        <button class="btn btn-primary" (click)='addDevice()'>add</button>
-
-    </div>
+   
 </div>

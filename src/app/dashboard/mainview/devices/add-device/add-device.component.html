@@ -1,0 +1,17 @@
+<app-devices-header class="header" [add]='true'></app-devices-header>
+<div class="container">
+    <div class="device-add">
+        <label for="name">serial</label>
+        <input type="text" maxlength="255" [(ngModel)]='serial' placeholder="enter serial">
+        <br>
+        <label for="email">description</label>
+        <input type="text" maxlength="255" [(ngModel)]='description' placeholder="enter descripton">
+        <br>
+        <label for="email">type</label>
+        <input type="number" [(ngModel)]='type' placeholder="enter type">
+        <br>
+        <button class="btn btn-primary" (click)='addDevice()'>add</button>
+        <button routerLink='/devices'>Back</button>
+
+    </div>
+</div>

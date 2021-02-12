@@ -17,6 +17,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { UsersHeaderComponent } from './dashboard/mainview/header/users-header/users-header.component';
 import { DevicesHeaderComponent } from './dashboard/mainview/header/devices-header/devices-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdduserComponent } from './dashboard/mainview/users/adduser/adduser.component';
+import { AddDeviceComponent } from './dashboard/mainview/devices/add-device/add-device.component';
 
 
 @NgModule({
@@ -31,7 +33,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DeviceComponent,
 
     UsersHeaderComponent,
-    DevicesHeaderComponent
+    DevicesHeaderComponent,
+    AdduserComponent,
+    AddDeviceComponent
   ],
   imports: [
     BrowserModule,

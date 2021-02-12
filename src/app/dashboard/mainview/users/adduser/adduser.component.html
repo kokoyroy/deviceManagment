@@ -1,0 +1,15 @@
+<app-users-header class="header" [add]='true'></app-users-header>
+
+<div class="container">
+    <div class="add-user">
+
+        <label for="name">name</label>
+        <input type="text" [(ngModel)]='name' placeholder="enter name">
+        <br>
+        <label for="email">Email</label>
+        <input type="email" [(ngModel)]='email' placeholder="enter email">
+        <br>
+        <button class="btn btn-primary" (click)='addUser()'>add</button>
+        <button routerLink='/users'>Back</button>
+    </div>
+</div>

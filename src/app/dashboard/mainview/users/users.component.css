@@ -28,6 +28,6 @@
     border: 1px red solid;
     display: flex;
     align-items: center;
-    padding-left: 50px;
+    /* padding-left: 50px; */
     font-size: larger;
 }

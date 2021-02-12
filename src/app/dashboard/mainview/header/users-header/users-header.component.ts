@@ -8,10 +8,10 @@ import { Component, Input, OnInit } from '@angular/core';
 export class UsersHeaderComponent implements OnInit {
   @Input() name: string;
   @Input() email: string;
+  @Input() add:boolean;
 
 
-
-  constructor() { }
+    constructor() { }
 
   ngOnInit(): void {
   }
