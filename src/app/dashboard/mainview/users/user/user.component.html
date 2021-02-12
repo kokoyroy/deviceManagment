@@ -1,12 +1,26 @@
-<app-users-header [email]='user.email' [name]='user.name'></app-users-header>
+<app-users-header class="header" [email]='email' [name]='name'></app-users-header>
 
-<div *ngIf='user'>User name  :  {{user.name}}</div>
-<div *ngIf='user'>User Email :  {{user.email}}</div>
-<div *ngIf='user'>User ID :  {{user.id}}</div>
+<div class="container">
+    <div class="left">
+        <div *ngIf='user'>User name : {{user.name}}</div>
+        <div *ngIf='user'>User Email : {{user.email}}</div>
+        <div *ngIf='user'>User ID : {{user.id}}</div>
 
 
-<p>Edit</p>
-<input  type="text" placeholder="name" [(ngModel)]='name'><br>
-<input  type="text" placeholder="email" [(ngModel)]='email'><br>
-<button (click)='edituser(user.id)'>Edit</button>
-<button (click)='cancel()'>cancel</button>
+        <p>Edit</p>
+        <input type="text" placeholder="name" [(ngModel)]='name'><br>
+        <input type="text" placeholder="email" [(ngModel)]='email'><br>
+        <button (click)='edituser(user.id)'>Edit</button>
+        <button (click)='cancel()'>cancel</button>
+
+    </div>
+    <div class="right">
+        <h2>available devices</h2>
+        <div *ngIf='availableDevices.length>0'>
+            <ul *ngFor='let device of availableDevices'>
+                <li>device serial num {{device.getDeviceSerial()}} <button (click)='add(device.id ,user.id)'>Add</button></li>
+    
+            </ul>
+        </div>
+    </div>
+</div>

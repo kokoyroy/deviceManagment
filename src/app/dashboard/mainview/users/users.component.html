@@ -2,22 +2,24 @@
 
 <div class="container">
     <div class="users-list">
-        <ul *ngFor='let user of usersList'>
-            <li>
-                <div><strong>Id:</strong>{{user.id}}</div>
-                <div> <strong>username:</strong>{{user.name}}</div>
-                <div><strong>email:</strong>{{user.email}}</div>
-                <button  routerLink='/users/{{user.id}}'>View/Edit</button>
-                <button (click)='deleteUser(user.id)'>Delete</button>
-                <p *ngIf='!user.getDevices().length'>this user got no devices!</p>
-                <div *ngIf='user.getDevices().length'>
-                    <ul *ngFor='let dev of user.getDevices()'>
-                        <li>{{dev}}</li>
-                    </ul>
-                </div>
-            </li>
-            <br>
-        </ul>
+        <div *ngIf='usersList'>
+            <ul *ngFor='let user of usersList'>
+                <li>
+                    <div><strong>Id:</strong>{{user.id}}</div>
+                    <div> <strong>username:</strong>{{user.name}}</div>
+                    <div><strong>email:</strong>{{user.email}}</div>
+                    <button  routerLink='/users/{{user.id}}'>View/Edit</button>
+                    <button (click)='deleteUser(user.id)'>Delete</button>
+                    <p *ngIf='!user.getDevices().length'>this user got no devices!</p>
+                    <div *ngIf='user.getDevices().length'>
+                        <ul *ngFor='let dev of user.getDevices()'>
+                            <li>{{dev}}</li>
+                        </ul>
+                    </div>
+                </li>
+                <br>
+            </ul>
+        </div>
     </div>
    
 </div>

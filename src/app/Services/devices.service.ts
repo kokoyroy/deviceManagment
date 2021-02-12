@@ -6,6 +6,7 @@ import { Devices } from '../devices';
   providedIn: 'root'
 })
 export class DevicesService {
+
   deviceList: Devices[] = []
   url: string = 'https://devicemanager-6d339-default-rtdb.europe-west1.firebasedatabase.app/'
 
@@ -17,11 +18,12 @@ export class DevicesService {
       for (let key in params) {
         let device: Devices = new Devices(params[key].serial, params[key].description, params[key].type)
         device.id = key
+        device.assigned = params[key].assigned
         this.deviceList.push(device)
       }
     })
-    // console.log(this.deviceList);
     return this.deviceList
+    // console.log(this.deviceList);
   }
   addToDeviceList(device: Devices) {
     this.http.post(this.url + 'devices.json', device).subscribe((params) => {
@@ -51,12 +53,21 @@ export class DevicesService {
       console.log(params);
 
       let index = this.deviceList.findIndex(el => el.id === id);
-      device.id = id
       this.deviceList[index] = device
     })
   }
   getDevice(id: string): Devices {
     let index = this.deviceList.findIndex(el => el.id === id)
     return this.deviceList[index];
+  }
+
+  setDeviceToAssigned(deviceID: string) {
+    const index = this.deviceList.findIndex(el => el.id === deviceID)
+    console.log(index);
+    
+    this.deviceList[index].assigned = true;
+    console.log(this.deviceList[index]);
+    
+    this.editDevice(deviceID, this.deviceList[index])
   }
 }

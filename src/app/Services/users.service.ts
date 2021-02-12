@@ -1,4 +1,5 @@
 import { HttpClient } from '@angular/common/http';
+import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
 import { Injectable } from '@angular/core';
 import { Users } from '../users';
 
@@ -16,11 +17,13 @@ export class UsersService {
     this.http.get(this.url + 'users.json').subscribe((users) => {
       for (const key in users) {
         let user: Users = new Users(key, users[key].name, users[key].email)
+        if (users[key].devices) {
+          user.devices = users[key].devices
+        }
         this.userList.push(user)
       }
     })
-    console.log(this.userList);
-
+    // console.log(this.userList);
     return this.userList
   }
   // method for adding users
@@ -32,6 +35,7 @@ export class UsersService {
       this.userList.push(user)
     })
   }
+  //returns a single user 
   getUser(id: string): Users {
     const index = this.userList.findIndex(el => el.id === id)
     return this.userList[index]
@@ -57,7 +61,17 @@ export class UsersService {
       }
     })
   }
+  addDeviceToUser(userID: string, deviceID: string) {
+    const index = this.userList.findIndex(el => el.id === userID);
+    this.userList[index].devices.push(deviceID)
+    const user = this.userList[index]
+    this.http.put(this.url + 'users/' + userID + '.json', user).subscribe((params) => {
+      console.log('user edited and device added');
 
+      console.log(params);
+
+    })
+  }
 
 
 

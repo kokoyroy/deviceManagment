@@ -1,0 +1,29 @@
+.header{
+    width: 80%;
+    margin: 0px auto;
+    height: 10%;
+    border: 1px red solid;
+    display: flex;
+    align-items: center;
+    /* padding-left: 50px; */
+    font-size: larger;
+}
+.container{
+    height: 90%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.left{
+    height: 100%;
+    width: 100%;
+    flex-grow: .5;
+    border: 1px solid green;
+}
+.right{
+    border: 1px solid blue;
+    height: 100%;
+    width: 100%;
+    flex-grow: .5;
+}
