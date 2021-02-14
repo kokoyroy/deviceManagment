@@ -8,7 +8,7 @@
         <div *ngIf='user'>
             <h3>user Devices</h3>
             <ul *ngFor='let dev of userDevices'>
-                <li>device with serial: <strong>{{dev}}</strong></li>
+                <li>device with serial: <strong>{{dev}}</strong> <button (click)='removeDevice(dev)'>remove</button></li>
             </ul>
         </div>
 

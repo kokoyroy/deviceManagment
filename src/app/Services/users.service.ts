@@ -67,12 +67,16 @@ export class UsersService {
     const user = this.userList[index]
     this.http.put(this.url + 'users/' + userID + '.json', user).subscribe((params) => {
       console.log('user edited and device added');
-
-      console.log(params);
-
+      // console.log(params);
     })
   }
 
+  removeDeviceFromUser(deviceId: string, userID: string) {
+    const index = this.userList.findIndex(el => el.id === userID)
+    this.userList[index].devices.splice(this.userList[index].devices.findIndex(el => el === deviceId), 1)
+    const updatedUser = this.userList[index]
+    this.editUser(userID, updatedUser)
+  }
 
 
 
