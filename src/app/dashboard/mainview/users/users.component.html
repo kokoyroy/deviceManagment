@@ -5,7 +5,6 @@
         <div *ngIf='usersList'>
             <ul *ngFor='let user of usersList'>
                 <li>
-                    <div><strong>Id:</strong>{{user.id}}</div>
                     <div> <strong>username:</strong>{{user.name}}</div>
                     <div><strong>email:</strong>{{user.email}}</div>
                     <button routerLink='/users/{{user.id}}'>View/Edit</button>
