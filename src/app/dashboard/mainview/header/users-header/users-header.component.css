@@ -1,21 +1,18 @@
 .users-header{
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
+    position: relative;
+    height: 100%;
 
 }
-.users-header button{
-    display: block;
-    padding: 5px 30px;
+h3{
+    position: absolute;
+    left: 50px;
 }
-.add{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 90%;
-}
-.add button{
-    display: block;
+.add{   
+    position: absolute;
+    right: 50px;
+    width: 150px;
 }

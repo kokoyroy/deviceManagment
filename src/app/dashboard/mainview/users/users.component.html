@@ -3,14 +3,37 @@
 <div class="container">
     <div class="users-list">
         <div *ngIf='usersList'>
-            <ul *ngFor='let user of usersList'>
-                <li>
-                    <div> <strong>username:</strong>{{user.name}}</div>
-                    <div><strong>email:</strong>{{user.email}}</div>
-                    <button routerLink='/users/{{user.id}}'>View/Edit</button>
-                    <button [disabled]='user.getDevices().length' (click)='deleteUser(user.id)'>Delete</button>
-                    <p *ngIf='!user.getDevices().length'><span style="color: red"> {{user.name}} got no devices!</span></p>
-                    <p *ngIf='user.getDevices().length'><span style="color: green">{{user.name}} has devices assigned</span></p>
+            <ul>
+                <li *ngFor='let user of usersList' class="list-item ">
+                    <div class="left">
+                        <div> <strong>username:</strong>{{user.name}}</div>
+                        <div><strong>email:</strong>{{user.email}}</div>
+                    </div>
+                    <div class="middle">
+                        <span *ngIf='!user.getDevices().length' style="color: red;" class="material-icons">
+                            done
+                        </span>
+                        <span *ngIf='user.getDevices().length' style="color: green;" class="material-icons">
+                            done
+                        </span>
+                    </div>
+                    <div class="right">
+                        <button mat-raised-button color="primary" routerLink='/users/{{user.id}}'>View/Edit</button>
+                        <button mat-raised-button color="warn" [disabled]='false'
+                            (click)='deleteUser(user.id)'>Delete</button>
+
+
+                    </div>
+
+
+
+
+
+
+
+
+
+                    <div class="blur"></div>
                 </li>
                 <br>
             </ul>

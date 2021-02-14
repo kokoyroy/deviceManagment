@@ -23,10 +23,13 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {
       let id = params.get('id')
-      this.user = this.usersService.getUser(id)
+      //getUser is asynchronous i must fix that
+      this.user =  this.usersService.getUser(id)
+      // ************************************
       this.name = this.user.name;
       this.email = this.user.email
       this.userDevices = this.user.devices
+      //******************************** */
     })
     this.allDevices = this.deviceService.deviceList
     this.availableDevices = this.allDevices.filter(el => el.assigned === false)
