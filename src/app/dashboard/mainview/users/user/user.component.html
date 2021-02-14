@@ -5,6 +5,13 @@
         <div *ngIf='user'>User name : {{user.name}}</div>
         <div *ngIf='user'>User Email : {{user.email}}</div>
         <div *ngIf='user'>User ID : {{user.id}}</div>
+        <div *ngIf='user'>
+            <h3>user Devices</h3>
+            <ul *ngFor='let dev of userDevices'>
+                <li>device with serial: <strong>{{dev}}</strong></li>
+            </ul>
+        </div>
+
 
 
         <p>Edit</p>
@@ -18,8 +25,9 @@
         <h2>available devices</h2>
         <div *ngIf='availableDevices.length>0'>
             <ul *ngFor='let device of availableDevices'>
-                <li>device serial num {{device.getDeviceSerial()}} <button (click)='add(device.id ,user.id)'>Add</button></li>
-    
+                <li>device serial num {{device.getDeviceSerial()}} <button
+                        (click)='add(device.id ,user.id)'>Add</button></li>
+
             </ul>
         </div>
     </div>

@@ -14,6 +14,7 @@ export class UserComponent implements OnInit {
   name: string;
   email: string;
   user: Users
+  userDevices:string[];
   allDevices: Devices[] = [];
   availableDevices: Devices[] = [];
 
@@ -25,6 +26,7 @@ export class UserComponent implements OnInit {
       this.user = this.usersServie.getUser(id)
       this.name = this.user.name;
       this.email = this.user.email
+      this.userDevices = this.user.devices
     })
     this.allDevices = this.deviceService.deviceList
     this.availableDevices = this.allDevices.filter(el => el.assigned === false)

@@ -8,7 +8,7 @@ import { DevicesService } from 'src/app/Services/devices.service';
   styleUrls: ['./devices.component.css']
 })
 export class DevicesComponent implements OnInit {
-  devices: Devices[] = []
+  devices: Devices[]
   constructor(private deviceService: DevicesService) { }
   
 
