@@ -1,8 +1,14 @@
 .container{
     width: 1200px;
     height: 800px;
-    border: 1px solid green;
-    margin: 50px auto;
     border-radius: 20px;
     overflow: hidden;
+    border: 1px solid black;
+}
+.mother{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
 }

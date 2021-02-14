@@ -19,6 +19,7 @@ import { DevicesHeaderComponent } from './dashboard/mainview/header/devices-head
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdduserComponent } from './dashboard/mainview/users/adduser/adduser.component';
 import { AddDeviceComponent } from './dashboard/mainview/devices/add-device/add-device.component';
+import { MaterialModule } from './material/material.module';
 
 
 @NgModule({
@@ -31,7 +32,6 @@ import { AddDeviceComponent } from './dashboard/mainview/devices/add-device/add-
     UserComponent,
     DevicesComponent,
     DeviceComponent,
-
     UsersHeaderComponent,
     DevicesHeaderComponent,
     AdduserComponent,
@@ -40,7 +40,7 @@ import { AddDeviceComponent } from './dashboard/mainview/devices/add-device/add-
   imports: [
     BrowserModule,
     MainviewRoutingModule,
-
+    MaterialModule,
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule
