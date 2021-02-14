@@ -6,7 +6,8 @@
             <li><em>description</em>: <span>{{dev.getDeviceDescription()}}</span></li>
             <li><em>type:</em> <span>{{dev.getDeviceType()}}</span> </li>
             <button routerLink='/devices/{{dev.id}}'>View/Edit</button>
-            <button (click)='deleteDevice(dev.id)'>delete</button>
+            <button [disabled]='dev.assigned' (click)='deleteDevice(dev.id)'>delete</button>
+            <span *ngIf='dev.assigned' style="color: red">cannot delete... device assigned to user</span>
         </ul>
     </div>
    
