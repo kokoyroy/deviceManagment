@@ -5,21 +5,16 @@
         <div *ngIf='usersList'>
             <ul *ngFor='let user of usersList'>
                 <li>
-                    <div><strong>Id:</strong>{{user.id}}</div>
                     <div> <strong>username:</strong>{{user.name}}</div>
                     <div><strong>email:</strong>{{user.email}}</div>
-                    <button  routerLink='/users/{{user.id}}'>View/Edit</button>
+                    <button routerLink='/users/{{user.id}}'>View/Edit</button>
                     <button (click)='deleteUser(user.id)'>Delete</button>
-                    <p *ngIf='!user.getDevices().length'>this user got no devices!</p>
-                    <div *ngIf='user.getDevices().length'>
-                        <ul *ngFor='let dev of user.getDevices()'>
-                            <li>{{dev}}</li>
-                        </ul>
-                    </div>
+                    <p *ngIf='!user.getDevices().length'><span style="color: red"> {{user.name}} got no devices!</span></p>
+                    <p *ngIf='user.getDevices().length'><span style="color: green">{{user.name}} has devices assigned</span></p>
                 </li>
                 <br>
             </ul>
         </div>
     </div>
-   
+
 </div>

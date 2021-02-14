@@ -64,10 +64,16 @@ export class DevicesService {
   setDeviceToAssigned(deviceID: string) {
     const index = this.deviceList.findIndex(el => el.id === deviceID)
     console.log(index);
-    
+
     this.deviceList[index].assigned = true;
     console.log(this.deviceList[index]);
-    
+
     this.editDevice(deviceID, this.deviceList[index])
+  }
+  unAssignDevice(deviceID: string) {
+    const index = this.deviceList.findIndex(el => el.id === deviceID)
+    this.deviceList[index].assigned = false
+    const updatedDevice = this.deviceList[index]
+    this.editDevice(deviceID, updatedDevice);
   }
 }

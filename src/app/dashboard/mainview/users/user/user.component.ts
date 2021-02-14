@@ -14,40 +14,50 @@ export class UserComponent implements OnInit {
   name: string;
   email: string;
   user: Users
+  userDevices: string[];
   allDevices: Devices[] = [];
   availableDevices: Devices[] = [];
 
-  constructor(private usersServie: UsersService, private activatedRoute: ActivatedRoute, private router: Router, private deviceService: DevicesService) { }
+  constructor(private usersService: UsersService, private activatedRoute: ActivatedRoute, private router: Router, private deviceService: DevicesService) { }
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {
       let id = params.get('id')
-      this.user = this.usersServie.getUser(id)
+      this.user = this.usersService.getUser(id)
       this.name = this.user.name;
       this.email = this.user.email
+      this.userDevices = this.user.devices
     })
     this.allDevices = this.deviceService.deviceList
     this.availableDevices = this.allDevices.filter(el => el.assigned === false)
-    console.log('none', this.availableDevices);
-    console.log(this.allDevices);
-    
-    
+    // console.log('none', this.availableDevices);
+    // console.log(this.allDevices);
+
+
   }
   add(deviceID: string, userID: string) {
-    this.usersServie.addDeviceToUser(userID, deviceID)
+    this.usersService.addDeviceToUser(userID, deviceID)
     this.deviceService.setDeviceToAssigned(deviceID)
+    this.refresh()
   }
 
   edituser(id: string) {
     let user = new Users(id, this.name, this.email)
-    this.usersServie.editUser(id, user)
+    this.usersService.editUser(id, user)
     this.router.navigate(['users'])
 
   }
-
+  refresh() {
+    this.allDevices = this.deviceService.deviceList
+    this.availableDevices = this.allDevices.filter(el => el.assigned === false)
+  }
   cancel() {
     this.router.navigate(['users'])
-
+  }
+  removeDevice(deviceId: string) {
+    this.usersService.removeDeviceFromUser(deviceId, this.user.id)
+    this.deviceService.unAssignDevice(deviceId)
+    this.refresh()
   }
 
 }
