@@ -18,12 +18,12 @@
         <div class="form">
             <h3>Edit User</h3>
             <mat-form-field class="example-full-width">
-                <mat-label>Email</mat-label>
-                <input type="email" [(ngModel)]='email' matInput placeholder="Ex. pat@example.com">
-            </mat-form-field><br>
-            <mat-form-field class="example-full-width">
                 <mat-label>name</mat-label>
                 <input type="email" [(ngModel)]='name' matInput placeholder="Ex. john doe">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" [(ngModel)]='email' matInput placeholder="Ex. pat@example.com">
             </mat-form-field><br>
             <div class="buttons">
                 <button mat-raised-button color="primary" (click)='edituser(user.id)'>Edit</button>
