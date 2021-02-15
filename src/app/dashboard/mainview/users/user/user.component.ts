@@ -24,7 +24,7 @@ export class UserComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params) => {
       let id = params.get('id')
       //getUser is asynchronous i must fix that
-      this.user =  this.usersService.getUser(id)
+      this.user = this.usersService.getUser(id)
       // ************************************
       this.name = this.user.name;
       this.email = this.user.email
@@ -45,8 +45,10 @@ export class UserComponent implements OnInit {
   }
 
   edituser(id: string) {
-    let user = new Users(id, this.name, this.email)
-    this.usersService.editUser(id, user)
+    const index = this.usersService.userList.findIndex(el => el.id === id)
+    this.usersService.userList[index].name = this.name
+    this.usersService.userList[index].email = this.email
+    this.usersService.editUser(id, this.usersService.userList[index])
     this.router.navigate(['users'])
 
   }

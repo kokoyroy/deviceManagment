@@ -2,32 +2,49 @@
 
 <div class="container">
     <div class="left">
-        <div *ngIf='user'>User name : {{user.name}}</div>
-        <div *ngIf='user'>User Email : {{user.email}}</div>
-        <div *ngIf='user'>User ID : {{user.id}}</div>
+        <div *ngIf='user'><strong>User name :</strong> {{user.name}}</div>
+        <div *ngIf='user'><strong>User Email :</strong> {{user.email}}</div>
+        <div *ngIf='user'><strong>User ID :</strong> {{user.id}}</div>
         <div *ngIf='user'>
             <h3>user Devices</h3>
             <ul *ngFor='let dev of userDevices'>
-                <li>device with serial: <strong>{{dev}}</strong> <button (click)='removeDevice(dev)'>remove</button></li>
+                <li><strong>device id:</strong> {{dev}} <button mat-raised-button color="warn" (click)='removeDevice(dev)'>remove</button>
+                </li>
             </ul>
         </div>
 
 
 
-        <p>Edit</p>
-        <input type="text" placeholder="name" [(ngModel)]='name'><br>
-        <input type="text" placeholder="email" [(ngModel)]='email'><br>
-        <button (click)='edituser(user.id)'>Edit</button>
-        <button (click)='cancel()'>cancel</button>
+        <div class="form">
+            <h3>Edit User</h3>
+            <mat-form-field class="example-full-width">
+                <mat-label>Email</mat-label>
+                <input type="email" [(ngModel)]='email' matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <mat-form-field class="example-full-width">
+                <mat-label>name</mat-label>
+                <input type="email" [(ngModel)]='name' matInput placeholder="Ex. john doe">
+            </mat-form-field><br>
+            <div class="buttons">
+                <button mat-raised-button color="primary" (click)='edituser(user.id)'>Edit</button>
+                <button mat-raised-button color="warn" (click)='cancel()'>cancel</button>
+            </div>
 
+
+
+
+
+
+
+        </div>
     </div>
     <div class="right">
-        <h2>available devices</h2>
+        <h2 style="text-align: center;">available devices</h2>
         <div *ngIf='availableDevices.length>0'>
-            <ul *ngFor='let device of availableDevices'>
-                <li>device serial num {{device.getDeviceSerial()}} <button
-                        (click)='add(device.id ,user.id)'>Add</button></li>
-
+            <ul *ngFor='let device of availableDevices' style="text-align: center;">
+                <li style="list-style: none;"><strong>device description :</strong> {{device.getDeviceDescription()}} <button mat-raised-button color="primary"
+                        (click)='add(device.id ,user.id)'>Add</button>
+                </li>
             </ul>
         </div>
     </div>

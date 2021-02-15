@@ -1,29 +1,44 @@
-.header{
-    width: 80%;
-    margin: 0px auto;
+.header {
     height: 10%;
-    border: 1px red solid;
     display: flex;
     align-items: center;
-    /* padding-left: 50px; */
     font-size: larger;
 }
-.container{
+.container {
     height: 90%;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.left{
+.left {
     height: 100%;
-    width: 100%;
-    flex-grow: .5;
-    border: 1px solid green;
+    width: 50%;
+    /* border: 1px solid green; */
+    position: relative;
 }
-.right{
-    border: 1px solid blue;
+.right {
+    /* border: 1px solid blue; */
     height: 100%;
+    width: 50%;
+}
+.form {
     width: 100%;
-    flex-grow: .5;
+    /* background-color: aqua; */
+    height: 300px;
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.example-full-width{
+    width: 80%;
+}
+.buttons{
+    display: flex;
+    flex-direction: row;
+}
+.buttons button{
+    margin: 0px 5px;
 }
