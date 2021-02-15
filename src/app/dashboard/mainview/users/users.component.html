@@ -19,7 +19,7 @@
                     </div>
                     <div class="right">
                         <button mat-raised-button color="primary" routerLink='/users/{{user.id}}'>View/Edit</button>
-                        <button mat-raised-button color="warn" [disabled]='false'
+                        <button mat-raised-button color="warn" [disabled]='user.getDevices().length'
                             (click)='deleteUser(user.id)'>Delete</button>
 
 
