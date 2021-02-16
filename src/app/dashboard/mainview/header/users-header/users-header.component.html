@@ -1,6 +1,12 @@
-<div class="user" *ngIf='name'>{{name}} <span style="color: red">/</span><span style="color: green">/</span>{{email}}</div>
+<div class="user" *ngIf='name'>{{name}} <span style="color: red">/</span><span style="color: green">/</span>{{email}}
+</div>
 <div *ngIf='!name&&!add' class="users-header">
     <h3>Users</h3>
     <button class="add" mat-raised-button color="primary" routerLink='/users/add'>Add</button>
 </div>
-<div *ngIf='add' class="add"><button mat-raised-button color="primary" routerLink='/users'>Back</button></div>
+<div *ngIf='add' class="add-user">
+    <h3>Add user</h3>
+
+    <div class="button"><button mat-raised-button color="primary" routerLink='/users'>Back</button></div>
+
+</div>

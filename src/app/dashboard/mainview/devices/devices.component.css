@@ -2,10 +2,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100%;
+    height: 90%;
 }
 .device-list {
-    background-color: wheat;
+    /* background-color: wheat; */
     flex-grow: 0.5;
     height: 100%;
 }
@@ -18,16 +18,11 @@
     padding-left: 15px;
 }
 
-.device-add {
-    background-color: khaki;
-    height: 100%;
-    flex-grow: 0.5;
-}
 .header{
-    height: 70px;
-    border: 1px red solid;
+    height: 10%;
+    /* border: 1px red solid; */
     display: flex;
     align-items: center;
-    padding-left: 50px;
+    /* padding-left: 50px; */
     font-size: larger;
 }

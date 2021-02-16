@@ -1,18 +1,25 @@
-.users-header{
+.users-header {
     display: flex;
     align-items: center;
     width: 100%;
     margin: 0 auto;
     position: relative;
     height: 100%;
-
 }
-h3{
-    position: absolute;
-    left: 50px;
+.users-header h3 {
+    margin-left: 50px;
 }
-.add{   
+.add {
     position: absolute;
     right: 50px;
     width: 150px;
+}
+.add-user {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.add-user .button{
+    margin-right: 50px;
 }

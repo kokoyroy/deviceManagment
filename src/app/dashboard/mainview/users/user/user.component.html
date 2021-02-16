@@ -4,7 +4,6 @@
     <div class="left">
         <div *ngIf='user'><strong>User name :</strong> {{user.name}}</div>
         <div *ngIf='user'><strong>User Email :</strong> {{user.email}}</div>
-        <div *ngIf='user'><strong>User ID :</strong> {{user.id}}</div>
         <div *ngIf='user'>
             <h3>user Devices</h3>
             <ul *ngFor='let dev of userDevices'>
@@ -19,23 +18,16 @@
             <h3>Edit User</h3>
             <mat-form-field class="example-full-width">
                 <mat-label>name</mat-label>
-                <input type="email" [(ngModel)]='name' matInput placeholder="Ex. john doe">
+                <input type="email"  [(ngModel)]='name' matInput placeholder="Ex. john doe">
             </mat-form-field><br>
             <mat-form-field class="example-full-width">
                 <mat-label>Email</mat-label>
                 <input type="email" [(ngModel)]='email' matInput placeholder="Ex. pat@example.com">
             </mat-form-field><br>
             <div class="buttons">
-                <button mat-raised-button color="primary" (click)='edituser(user.id)'>Edit</button>
+                <button type="submit" mat-raised-button color="primary" (click)='edituser(user.id)'>Edit</button>
                 <button mat-raised-button color="warn" (click)='cancel()'>cancel</button>
             </div>
-
-
-
-
-
-
-
         </div>
     </div>
     <div class="right">

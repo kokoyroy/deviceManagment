@@ -2,14 +2,21 @@
 
 <div class="container">
     <div class="add-user">
-
-        <label for="name">name</label>
-        <input type="text" [(ngModel)]='name' placeholder="enter name">
-        <br>
-        <label for="email">Email</label>
-        <input type="email" [(ngModel)]='email' placeholder="enter email">
-        <br>
-        <button class="btn btn-primary" (click)='addUser()'>add</button>
-        <button routerLink='/users'>Back</button>
+<div class="blur"></div>
+        <div class="form">
+            <h3>Add User</h3>
+            <mat-form-field class="forminput">
+                <mat-label>name</mat-label>
+                <input  type="text" maxlength="255" [(ngModel)]='name' matInput placeholder="Ex. john doe">
+            </mat-form-field><br>
+            <mat-form-field class="forminput">
+                <mat-label>Email</mat-label>
+                <input  type="email" [(ngModel)]='email' matInput placeholder="Ex. pat@example.com">
+            </mat-form-field><br>
+            <div class="buttons">
+                <button type="submit" mat-raised-button color="primary" (click)='addUser()'>Add</button>
+                <button routerLink='/users' type="submit" mat-raised-button color="warn" >Back</button>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,6 +1,6 @@
 .header{
     height: 10%;
-    border: 1px red solid;
+    /* border: 1px red solid; */
     display: flex;
     align-items: center;
     padding-left: 50px;
@@ -12,5 +12,38 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 1px solid red;
+    /* border: 1px solid red; */
+}
+.add-user{
+    height: 60%;
+    width: 45%;
+    position: relative;
+    box-shadow: 5px 6px 15px -8px;
+    border-radius: 25px;
+
+
+}
+.blur{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: lightgray;
+    opacity: .5;
+    backdrop-filter: blur(7px);
+    z-index: -1;
+    border-radius: 25px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.form .forminput{
+    width: 80%;
+}
+.form button{
+    margin: 0px 5px;
 }

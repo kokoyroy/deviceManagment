@@ -2,20 +2,14 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 
 }
+.devices-header h3{
+    margin-left: 50px;
+}
 .devices-header button{
-    display: block;
-    padding: 5px 30px;
+    margin-right: 50px;
 }
-.add{
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    width: 90%;
-}
-.add button{
-    display: block;
-}
+

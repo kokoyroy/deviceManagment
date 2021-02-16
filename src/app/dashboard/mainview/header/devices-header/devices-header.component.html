@@ -1,6 +1,6 @@
 <p *ngIf='description'>device description {{description}} serial{{serial}}</p>
 <div *ngIf='!description&&!add' class="devices-header">
     <h3>Devices</h3>
-    <button routerLink='/devices/add'>Add</button>
+    <button mat-raised-button color="primary" routerLink='/devices/add'>Add</button>
 </div>
-<div *ngIf='add' class="add"><button routerLink='/devices'>Back</button></div>
+<div *ngIf='add' ><button  mat-raised-button color="primary" routerLink='/devices'>Back</button></div>
