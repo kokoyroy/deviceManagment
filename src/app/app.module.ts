@@ -11,7 +11,7 @@ import { UsersComponent } from './dashboard/mainview/users/users.component';
 import { UserComponent } from './dashboard/mainview/users/user/user.component';
 import { DevicesComponent } from './dashboard/mainview/devices/devices.component';
 import { DeviceComponent } from './dashboard/mainview/devices/device/device.component';
-import { MainviewRoutingModule } from './dashboard/mainview/mainview-routing.module';
+import { MainviewRoutingModule } from './mainview-routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { UsersHeaderComponent } from './dashboard/mainview/header/users-header/users-header.component';
@@ -35,7 +35,8 @@ import { MaterialModule } from './material/material.module';
     UsersHeaderComponent,
     DevicesHeaderComponent,
     AdduserComponent,
-    AddDeviceComponent
+    AddDeviceComponent,
+    
   ],
   imports: [
     BrowserModule,
